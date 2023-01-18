@@ -54,7 +54,7 @@ for p in post_item:
 
 
 
-engine = create_engine('mysql+pymysql://adslawfi_user:1Sampa!9@202.52.146.189/adslawfi_db')
+engine = create_engine('mysql+pymysql://{db_user}:{db_pass}@{db_host}/{db_name}')
 df = pd.DataFrame.from_dict(post_dict)
 df.to_sql(con=engine, name='posts', if_exists='append', index=False)
 df.head(5)
